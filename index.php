@@ -1,3 +1,7 @@
+<?php
+require 'functions/crea-function.php';
+$creations = allCrea();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -128,205 +132,81 @@
                 <div class="container-fluid  text-center">
                     <h2 class="m-3">Mes derniers projets :</h2> <!-- container ou fluid ? -->
                     <div class="row"> <!-- align 12 colonnes -->
-                    <div class="p-3 col-xxl-3 item col-md-6">
-                            <div class="box" style="background-image:url(images/lpoa.png)">
-                                <div class="cover">
-                                    <h3 class="mb-3">Lapins Perdus Of Azeroth</h3>
-                                    <p><strong>Réalisation(s) :</strong><br/>un site, création d'identité visuelle, des bannieres discord</p>
-                                    <div class="framworks">
-                                        <i class="fab fa-wordpress fa-2x p-3"></i>
-                                        <i class="fab fa-html5 fa-2x p-3"></i>
-                                    </div>
-                                    <a class="btn ms-4 mt-3 btn-outline-warning shadow-sm" href="https://lpoa.nvg-tv.com/" title="Vers le site" target="_blank">Voir le site <i class="fas fa-angle-right"></i></i></i></a>
-                                    <button class="btn mt-3 btn-outline-warning shadow-sm" data-bs-toggle="modal" data-bs-target="#modalLPOA">Plus d'images</button>
-                                </div>
-                                <div class="modal" id="modalLPOA">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
-                                        <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="text-end">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
-                                                </div>
-                                                <div id="carouselLPOA" class="carousel slide mb-3" data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="images/lpoa.png" class="d-block w-100" alt="image1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/bannièrelpoa.png" class="d-block w-100" alt="image2">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                        <img src="images/prixraids.png" class="d-block w-100" alt="image3">
+                        <?php
+                        $i = 0;
+                        while($i < 4){
+                                $picture3 = '';
+                                $picture4 = '';
+                                $url = '';
+                                if($creations[$i]['picture3'] != ''){
+                                    $picture3 = '<div class="carousel-item">
+                                        <img src="images/'.$creations[$i]['picture3'].'" class="d-block w-100" alt="'.$creations[$i]['picture3'].'">
+                                     </div>';
+                                }
+                                if($creations[$i]['picture4'] != ''){
+                                    $picture4 = '<div class="carousel-item">
+                                        <img src="images/'.$creations[$i]['picture4'].'" class="d-block w-100" alt="'.$creations[$i]['picture4'].'">
+                                     </div>';
+                                }
+                                if($creations[$i]['url'] != ''){
+                                    $url = '<a class="btn ms-4 mt-3 btn-outline-warning shadow-sm" href = "'.$creations[$i]['url'].'" title = "Vers le site" target = "_blank" > Voir le site <i class="fas fa-angle-right" ></i></a >';
+                                }
+                                echo('<div class="p-3 col-xxl-3 item col-md-6">
+                                        <div class="box" style="background-image:url(images/'.$creations[$i]['picture'].')">
+                                            <div class="cover">
+                                                <h3 class="mb-3">'.$creations[$i]['name'].'</h3>
+                                                <p><strong>Réalisation(s) :</strong><br/>'.$creations[$i]['realisation'].'</p >
+                                                <div class="framworks" >
+                                                    '.$creations[$i]['framworks'].'
+                                                </div >
+                                                '.$url.'
+                                                <button class="btn mt-3 btn-outline-warning shadow-sm" data-bs-toggle = "modal" data-bs-target = "#modal'.$creations[$i]['suffixe'].'" > Plus d\'images</button>
+                                            </div>
+                                            <div class="modal" id="modal'.$creations[$i]['suffixe'].'">
+                                                <div class="modal-dialog modal-xl">
+                                                    <div class="modal-content">
+                                                    <!-- Modal body -->
+                                                        <div class="modal-body">
+                                                            <div class="text-end">
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div id="carousel'.$creations[$i]['suffixe'].'" class="carousel slide mb-3" data-bs-ride="carousel">
+                                                                <div class="carousel-inner">
+                                                                    <div class="carousel-item active">
+                                                                        <img src="images/'.$creations[$i]['picture1'].'" class="d-block w-100" alt="'.$creations[$i]['picture1'].'">
+                                                                    </div>
+                                                                    <div class="carousel-item">
+                                                                        <img src="images/'.$creations[$i]['picture2'].'" class="d-block w-100" alt="'.$creations[$i]['picture2'].'">
+                                                                    </div>
+                                                                    '.$picture3.$picture4.'
+                                                                </div>
+                                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel'.$creations[$i]['suffixe'].'" data-bs-slide="prev">
+                                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                    <span class="visually-hidden">Previous</span>
+                                                                </button>
+                                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel'.$creations[$i]['suffixe'].'" data-bs-slide="next">
+                                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                    <span class="visually-hidden">Next</span>
+                                                                </button>
+                                                            </div>
+                                                            '.$url.'
+                                                            <button type="button" class="btn ms-4 mt-3 btn-danger" data-bs-dismiss="modal">Fermer</button>
                                                         </div>
                                                     </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselLPOA" data-bs-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselLPOA" data-bs-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </button>
                                                 </div>
-                                                <a class="btn btn-outline-danger shadow-sm" href="https://lpoa.nvg-tv.com/" title="Vers le site" target="_blank">Voir le site <i class="fas fa-angle-right"></i></i></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div>'
+                                );
+                                $i++;
+
+
+                        }
+
+                        ?>
+                        <div class="text-center">
+                            <a class="btn m-3 btn-outline-info shadow-sm" href="realisations.php" title="Portfolio">En voir plus</a>
                         </div>
-                        <div class="p-3 col-xxl-3 item col-md-6">
-                            <div class="box" style="background-image:url(images/nvg.png)">
-                                <div class="cover">
-                                    <h3 class="mb-3">Normandie Viking Gaming</h3>
-                                    <p><strong>Réalisation(s) :</strong><br/>un site, des maquettes, une charte graphique</p>
-                                    <div class="framworks">
-                                        <i class="fab fa-wordpress fa-2x p-3"></i>
-                                        <i class="fab fa-html5 fa-2x p-3"></i>
-                                        <i class="fab fa-js fa-2x p-3"></i>
-                                        <i class="fab fa-buysellads fa-2x p-3"></i>
-                                    </div>
-                                    <a class="btn ms-4 mt-3 btn-outline-warning shadow-sm" href="https://nvg-tv.com/" title="Vers le site" target="_blank">Voir le site <i class="fas fa-angle-right"></i></i></i></a>
-                                    <button class="btn mt-3 btn-outline-warning shadow-sm" data-bs-toggle="modal" data-bs-target="#modalNVG">Plus d'images</button>
-                                </div>
-                                <div class="modal" id="modalNVG">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
-                                        <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="text-end">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
-                                                </div>
-                                                <div id="carouselNVG" class="carousel slide mb-3" data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="images/nvg.png" class="d-block w-100" alt="image1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/maquette_site_2.0.1.png" class="d-block w-100" alt="image2">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/partenaires.png" class="d-block w-100" alt="image3">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/menu.png" class="d-block w-100" alt="image4">
-                                                        </div>
-                                                    </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselNVG" data-bs-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselNVG" data-bs-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </button>
-                                                </div>
-                                                <a class="btn btn-outline-danger" href="https://nvg-tv.com/" title="Vers le site" target="_blank">Vers le site <i class="fas fa-angle-right"></i></i></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-3 col-xxl-3 item col-md-6">
-                            <div class="box" style="background-image:url(images/logo_caro3.png)">
-                                <div class="cover">
-                                    <h3 class="mb-3">Les créas de Caro</h3>
-                                    <p><strong>Réalisation(s) :</strong><br/>un logo, un mockup d'une bannière facebook</p>
-                                    <div class="framworks">
-                                        <i class="fab fa-buysellads fa-2x p-3"></i>
-                                    </div>
-                                    <a class="btn ms-4 mt-3 btn-outline-warning shadow-sm" href="https://www.facebook.com/Les-Cr%C3%A9as-de-Caro-1423384494609517/" title="Vers le site" target="_blank">Voir le site <i class="fas fa-angle-right"></i></i></i></a>
-                                    <button class="btn mt-3 btn-outline-warning shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCaro">Plus d'images</button>
-                                </div>
-                                <div class="modal" id="modalCaro">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
-                                        <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="text-end">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
-                                                </div>
-                                                <div id="carouselCaro" class="carousel slide mb-3" data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="images/logo_caro3.png" class="d-block w-100" alt="image1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/banner_caro.png" class="d-block w-100" alt="image2">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                        <img src="images/pagefb_caro.png" class="d-block w-100" alt="image3">
-                                                        </div>
-                                                    </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaro" data-bs-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCaro" data-bs-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </button>
-                                                </div>
-                                                <a class="btn btn-outline-danger shadow-sm" href="https://www.facebook.com/Les-Cr%C3%A9as-de-Caro-1423384494609517/" title="Vers le site" target="_blank">Voir le site <i class="fas fa-angle-right"></i></i></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-3 col-xxl-3 item col-md-6">
-                            <div class="box" style="background-image:url(images/bannereds.png)">
-                                <div class="cover">
-                                    <h3 class="mb-3">E.D.S</h3>
-                                    <p><strong>Réalisation(s) :</strong><br/>3 bannières youtube</p>
-                                    <div class="framworks">
-                                        <i class="fab fa-buysellads fa-2x p-3"></i>
-                                    </div>
-                                    <button class="btn mt-3 btn-outline-warning shadow-sm" data-bs-toggle="modal" data-bs-target="#modalEDS">Plus d'images</button>
-                                </div>
-                                <div class="modal" id="modalEDS">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
-                                        <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="text-end">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
-                                                </div>
-                                                <div id="carouselEDS" class="carousel slide mb-3" data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="images/bannereds.png" class="d-block w-100" alt="image1">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="images/bannièrebasic.png" class="d-block w-100" alt="image2">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                        <img src="images/bannière-sound.png" class="d-block w-100" alt="image3">
-                                                        </div>
-                                                    </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselEDS" data-bs-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselEDS" data-bs-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </button>
-                                                </div>
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="btn m-3 btn-outline-info shadow-sm" href="realisations.php" title="Portfolio">En voir plus</a>
                 </div>
             </section>
 
