@@ -84,7 +84,7 @@
                                         <div class="timeline-panel">
                                             <h3>La Galette du Ménil</h3>
                                             <p><strong>Vendeuse en boulangerie</strong><br/>Fevrier - Août 2021</p>
-                                            <p>Mise en rayon</p>
+                                            <p>Mise en rayon, préparation de commandes et des livraisons, prise de commandes, contact client, service.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -108,7 +108,7 @@
                                         <div class="timeline-panel">
                                             <h3>Mcdonald’s</h3>
                                             <p><strong>Equipier polyvalent</strong><br/>Avril 2019 - Mars 2020</p>
-                                            <p>Autonomie,</p>
+                                            <p>Autonomie, renseigner le client sur la composition des produits et enregistrer sa commande, préparer des sandwichs, procédures d'encaissement, cuire des viandes, poissons ou légumes, réaliser la plonge, remettre la commande au client, modes de cuisson des aliments, entretenir des locaux, nettoyer du matériel ou un équipement, utilisation de matériel de nettoyage, gestion de la chaîne du froid</p>
                                         </div>
                                     </div>
                                 </li>
