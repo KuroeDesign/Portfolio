@@ -3,7 +3,7 @@ require 'functions/crea-function.php';
 $creations = allCrea();
 ?>
 <!DOCTYPE html>
-<html  prefix="og: http://ogp.me/ns#">
+<html  prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
         <meta property="og:title" content="KuroeDesign"/>
