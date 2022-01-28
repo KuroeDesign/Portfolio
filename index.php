@@ -6,6 +6,9 @@ $creations = allCrea();
 <html  prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="@KuroeGaming"/>
+        <meta name="twitter:creator" content="@KuroeGaming"/>
         <meta property="og:title" content="KuroeDesign"/>
         <meta property="og:description" content="Site dédié à la présentation des réalisations et du parcours de Kuroe"/>
         <meta property="og:image" content="https://kuroedesign.fr/images/logoKuroeBanner.png" />
