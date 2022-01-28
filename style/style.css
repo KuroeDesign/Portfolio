@@ -190,6 +190,19 @@ body strong {
   color: #295960;
 }
 
+footer a{
+  color: white;
+}
+footer a:hover{
+  color: #c2fff0;
+}
+.footeraBis{
+  color: black;
+}
+.footeraBis:hover{
+  color: #295960;
+}
+
 /*********************************IMGS GALLERY*/
 
 .item .box {

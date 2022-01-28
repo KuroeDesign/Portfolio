@@ -3,49 +3,25 @@ require 'functions/crea-function.php';
 $creations = allCrea();
 ?>
 <!DOCTYPE html>
-<html>
+<html  prefix="og: http://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="style/style.css">
-        <!-- Lier bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-
-        <!-- Script JS -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-        <!-- intégration icon fontawesome -->
-        <script src="https://kit.fontawesome.com/6939106af0.js" crossorigin="anonymous"></script>
+        <meta property="og:title" content="KuroeDesign"/>
+        <meta property="og:description" content="Site dédié à la présentation des réalisations et du parcours de Kuroe"/>
+        <meta property="og:image" content="http://kuroedesign.fr/images/logoKuroe.png" />
+        <meta property="og:image:secure_url" content="https://kuroedesign.fr/images/logoKuroe.png" />
+        <meta property="og:image:type" content="logoKuroeBanner.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta property="og:image:alt" content="Logo KuroeDesign" />
+        <meta property="og:url" content="https://kuroedesign.fr/" />
+        <?php require 'parts/links.php'?>
         <title>KuroeDesign</title>
     </head>
     <body>
 
         <header class="sticky-top">
-<!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-                <div class="container">
-                    <a class="navbar-brand" href="index.php"><img src="images/logoKuroeCircle2.png" alt="Logo Kuroe" height="80px"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="realisations.php">Réalisations</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="formations.php">Parcours</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Me contacter</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <?php require 'parts/header.php' ?>
         </header>
 
         <main>
@@ -114,7 +90,7 @@ $creations = allCrea();
                         <div class="col-lg-4 borderright p-4">
                             <img src="images/computer.png" class="img-fluid mb-3" width="100px">
                             <h2>Back End</h2>
-                            <p>Développement de sites web, création  et gestion de bases de données, programmation orientée objet et modèle 3 tiers, mise en ligne.</p>
+                            <p>Développement de sites web, création  et gestion de bases de données, programmation orientée objet, mise en ligne.</p>
                             <p><strong class="text-green">Compétences :</strong><br/>Php, SEO, Connexion FTP, MySQL</p>
                             <p>
                                 <strong class="text-green">Outils de developpement :</strong><br/>
@@ -285,7 +261,8 @@ $creations = allCrea();
         </main>
 
         <footer> 
-            <?php include 'footer.php';?>
+            <?php require 'parts/footer.php';?>
         </footer>
+        <?php require 'parts/scripts.php'?>
     </body>
 </html>

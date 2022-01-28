@@ -2,46 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="style/style.css">
-        <!-- Lier bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-
-        <!-- Script JS -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-        <!-- intégration icon fontawesome -->
-        <script src="https://kit.fontawesome.com/6939106af0.js" crossorigin="anonymous"></script>
-        <title>KuroeDesign</title>
+        <?php require 'parts/links.php'?>
+        <title>KuroeDesign : Contacte moi !</title>
     </head>
     <body>
 
         <header class="sticky-top">
-            <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-                <div class="container">
-                    <a class="navbar-brand" href="index.php"><img src="images/logoKuroeCircle.png" alt="Logo Kuroe" height="80px"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="realisations.php">Réalisations</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="formations.php">Formations</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link active" href="contact.php">Me contacter</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <?php require 'parts/header.php'?>
         </header>
 
         <main>
@@ -115,15 +82,15 @@
                         <div class="col-lg-3"></div>
                         <div class="col-xl-2">
                             <i class="fas fa-at fa-2x"></i>
-                            <p> cloe.ds@hotmail.com</p>
+                            <p><a href="mailto:cloe.ds@hotmail.com" class="footeraBis">cloe.ds@hotmail.com</a></p>
                         </div>
                         <div class="col-xl-2">
                             <i class="fas fa-phone-alt fa-2x"></i>
-                            <p> 06 34 53 43 59</p>
+                            <p><a href="tel:+33634534359" class="footeraBis">06 34 53 43 59</a></p>
                         </div>
                         <div class="col-xl-2">
                             <i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p> Rue Guillaume Apollinaire, la Pastorale F<br/>13500 Martigues</p>
+                            <p><a target="_blank" href="https://www.google.fr/maps/place/Rue+Guillaume+Appolinaire,+13500+Martigues/@43.4210413,5.0462761,18z/data=!3m1!4b1!4m5!3m4!1s0x12b61e3a8429a6d1:0xded466cb1607de10!8m2!3d43.4210394!4d5.0473704" class="footeraBis">Rue Guillaume Apollinaire, la Pastorale F<br/>13500 Martigues</a></p>
                         </div>
                         <div class="col-lg-3"></div>
                     </div>
@@ -149,5 +116,6 @@
                 </div>
             </section>
         </footer>
+        <?php require 'parts/scripts.php'?>
     </body>
 </html>

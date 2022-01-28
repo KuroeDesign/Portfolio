@@ -5,15 +5,15 @@
             <div class="col-lg-3"></div>
             <div class="col-xl-2">
                 <i class="fas fa-at fa-2x"></i>
-                <p> cloe.ds@hotmail.com</p>
+                <p><a href="mailto:cloe.ds@hotmail.com">cloe.ds@hotmail.com</a></p>
             </div>
             <div class="col-xl-2">
                 <i class="fas fa-phone-alt fa-2x"></i>
-                <p> 06 34 53 43 59</p>
+                <p><a href="tel:+33634534359">06 34 53 43 59</a></p>
             </div>
             <div class="col-xl-2">
                 <i class="fas fa-map-marker-alt fa-2x"></i>
-                <p> Rue Guillaume Apollinaire, la Pastorale F<br/>13500 Martigues</p>
+                <p><a target="_blank" href="https://www.google.fr/maps/place/Rue+Guillaume+Appolinaire,+13500+Martigues/@43.4210413,5.0462761,18z/data=!3m1!4b1!4m5!3m4!1s0x12b61e3a8429a6d1:0xded466cb1607de10!8m2!3d43.4210394!4d5.0473704">Rue Guillaume Apollinaire, la Pastorale F<br/>13500 Martigues</a></p>
             </div>
             <div class="col-md-3"></div>
         </div>
